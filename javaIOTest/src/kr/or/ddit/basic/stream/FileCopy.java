@@ -58,7 +58,6 @@ public class FileCopy {
 			/*
 			 * while((data = fin.read()) != -1) { fout.write(data); } fout.flush();
 			 * 
-			 * 
 			 * // 스트림 닫기 fin.close(); fout.close();
 			 */
 
@@ -77,24 +76,30 @@ public class FileCopy {
 		}
 		// -------------------------------------------------------------
 		/*
-		 * try { File file = new File("d:/d_other/Penguins.jpg");
-		 * 
-		 * if(!file.exists()) { System.out.println(file.getName() + " 파일이 없습니다.");
-		 * System.out.println("복사를 중단합니다."); return; }
-		 * 
-		 * FileInputStream fin = new FileInputStream(file);
-		 * 
-		 * FileOutputStream fout = new
-		 * FileOutputStream("d:/d_other/연습용/Penguins_복사본.jpg");
-		 * 
-		 * int copy;
-		 * 
-		 * while((copy=fin.read()) != -1) { fout.write(copy); }
-		 * System.out.println("복사완료");
-		 * 
-		 * fin.close(); fout.close();
-		 * 
-		 * } catch (IOException e) { // TODO: handle exception }
+		  try { 
+		  File file = new File("d:/d_other/Penguins.jpg");
+		  
+		  if(!file.exists()) { 
+			  System.out.println(file.getName() + " 파일이 없습니다.");
+			  System.out.println("복사를 중단합니다."); 
+			  return; 
+		  }
+		  
+		  FileInputStream fin = new FileInputStream(file);
+		  
+		  FileOutputStream fout = new FileOutputStream("d:/d_other/연습용/Penguins_복사본.jpg");
+		  
+		  int copy;
+		  
+		  while((copy=fin.read()) != -1) { 
+		  		fout.write(copy); 	
+		  }
+		  System.out.println("복사완료");
+		  
+		  fin.close(); 
+		  fout.close();
+		  
+		  } catch (IOException e) { // TODO: handle exception }
 		 */
 
 	}
