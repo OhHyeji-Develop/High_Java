@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+
+<style>
+
+/* 노멀라이즈 */
+body, ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 라이브러리 */
+.cell {
+	float: left;
+}
+
+.cell-right {
+	float: right;
+}
+
+.row::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* 커스텀 */
+.header {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	background: #ffffff;
+	z-index: 10;
+}
+
+.header>.top-menu {
+	position: relative;
+	height: 70px;
+	border-top: #e5e5e5 solid 1px;
+	border-bottom: #e5e5e5 solid 1px;
+}
+
+/* 로고 */
+.header>.top-menu>.logo {
+	top: 50%;
+	position: absolute;
+	transform: translateY(-50%);
+	left: 20px;
+}
+
+.header>.top-menu>.logo img {
+	width: 60px;
+}
+
+/* 상단메뉴 */
+.header>.top-menu>.menu-1 {
+	display: inline-block;
+	line-height: 70px;
+}
+
+.header>.top-menu>.menu-1>ul>li a {
+	font-weight: bold;
+	letter-spacing: -0.9px;
+	display: block;
+	padding: 0 20px;
+	font-size: 16px;
+	position: relative;
+}
+
+.header>.top-menu>.menu-1>ul>li a::after {
+	content: "";
+	display: block;
+	background-color: black;
+	height: 1px;
+	width: 1px;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all .2s;
+	position: absolute;
+}
+
+.header>.top-menu>.menu-1>ul>li:hover>a::after {
+	width: 100%;
+}
+
+/* 검색바 */
+.header>.top-menu>.search-box {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 20px;
+}
+
+.header>.top-menu>.search-box>span {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header>.top-menu>.search-box>input {
+	width: 224px;
+	height: 50px;
+	padding: 10px 0 10px 45px;
+	outline: 0;
+	border: #e5e5e5 solid 1px;
+	border-radius: 5px
+}
+
+.header>.top-menu>.search-box>input:focus {
+	border-color: gray;
+}
+
+/* 상단메뉴 */
+.header-gnb>.header-brand>ul>li {
+	border-right: solid 1px #e5e5e5;
+}
+
+.header-gnb ul>li>a {
+	font-size: 14px;
+	display: block;
+	padding: 0 20px;
+	line-height: 40px;
+	color: #8d8d8d;
+}
+
+a.jordan {
+	opacity: 50%;
+}
+
+.header-gnb ul>li>a:hover {
+	opacity: 100%;
+}
+
+.header-gnb ul>li:hover>a {
+	color: black;
+}
+
+.header-gnb ul>li>span {
+	color: #8d8d8d;
+	font-size: 14px;
+	line-height: 40px;
+}
+
+.header-gnb ul>li:hover>span>a {
+	color: black;
+}
+
+.header-gnb ul>li>span>.join {
+	padding-right: 0;
+}
+
+.header-gnb ul>li>span>.login {
+	padding-left: 0;
+}
+
+/* 조던 */
+.header-gnb>.header-brand .jordan img {
+	vertical-align: middle;
+	width: 20px;
+}
+
+.header-gnb>.header-brand .jordan {
+	line-height: 40px;
+}
+</style>
+
+</head>
+<body>
+
+	<!-- 아이콘불러오기 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+	<div class="header">
+		<div class="header-gnb row">
+			<div class="header-brand cell">
+				<ul class="row">
+					<li class="cell"><a href="#">Nike</a></li>
+					<li class="cell"><a href="#">Nike Membership</a></li>
+					<li class="cell"><a class="jordan" href="#"><img
+							src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/structured-content/2357/180124_JD_SLP_P0_logo.png"
+							alt=""></a></li>
+					<li class="cell"><a href="#">CONVERSE-></a></li>
+				</ul>
+			</div>
+			<div class="header-mymenu cell-right">
+				<ul class="row">
+					<li class="cell"><span class="join-login"> <a
+							class="join" href="#">회원가입</a> / <a class="login" href="#">로그인</a>
+					</span></li>
+					<li class="cell"><a href="#">고객센터</a></li>
+					<li class="cell"><a class="cart-ico" href="#"><i
+							class="fas fa-shopping-cart"></i></a></li>
+					<li class="cell"><a class="loc-ico" href="#"><i
+							class="fas fa-map-marker"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="top-menu">
+			<div class="logo">
+				<a href="#"><img
+					src="http://www.tennispeople.kr/news/photo/201801/8350_44109_4633.png"
+					alt=""></a>
+			</div>
+			<div class="menu-1">
+				<ul class="row">
+					<li class="cell"><a href="#">NEW RELEASES</a></li>
+					<li class="cell"><a href="#">MEN</a></li>
+					<li class="cell"><a href="#">WOMEN</a></li>
+					<li class="cell"><a href="#">KIDS</a></li>
+					<li class="cell"><a href="#">GIFTS</a></li>
+				</ul>
+			</div>
+			<div class="search-box">
+				<input type="search" placeholder="검색"> <span class="icon"><i
+					class="fas fa-search"></i></span>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
